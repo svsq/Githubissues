@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/dark_grey</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textColorPrimary">@color/dark_grey</item>
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+    </style>
+
 </resources>

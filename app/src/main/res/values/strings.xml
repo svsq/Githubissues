@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Github issues</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Відміна</string>
+    <string name="cancel_text">Скасувати</string>
+    <string name="settings">Налаштування</string>
+    <string name="not_now">Не зараз</string>
+    <string name="text_continue">Продовжити</string>
+    <string name="text_ready">Готово</string>
+    <string name="close_text">Закрити</string>
+    <string name="apply_text">Застосувати</string>
+
+    <!-- Common Text -->
+    <string name="error_network">Перевір інтернет підключення та спробуй ще раз</string>
+    <string name="error_network_title">Немає інтернету</string>
+    <string name="error_unexpected">Тимчасові несправності</string>
+
+    <!-- Common States -->
+    <string name="state_no_network_title">Ауч! Немає інтернету</string>
+    <string name="state_no_network_1">Перевір інтернет підключення\nта</string>
+    <string name="state_no_network_2">спробуй ще раз</string>
+    <string name="state_temp_error_title">Тимчасові несправності</string>
+    <string name="state_temp_error_1">Приносимо свої вибачення.\nЗачекай пару хвилин та</string>
+    <string name="state_temp_error_2">спробуй ще раз</string>
 </resources>
