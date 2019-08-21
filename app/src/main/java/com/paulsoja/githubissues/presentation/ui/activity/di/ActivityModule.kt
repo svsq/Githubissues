@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui
+package com.paulsoja.githubissues.presentation.ui.activity.di
 
 import androidx.appcompat.app.AppCompatActivity
 import com.paulsoja.githubissues.presentation.di.scope.PerActivity

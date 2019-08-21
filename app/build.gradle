@@ -32,9 +32,6 @@ android {
             def baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") :
                     '"https://test.github.issue/"'
 
-//      def baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") :
-//        '"https://stores-api.zakaz.ua/"'
-
             buildConfigField("String", "BASE_URL", baseUrl)
             def buildNameSuffix = variant.buildType.name != "release" ? "-${variant.buildType.name}" : ""
             variant.outputs.all { output ->

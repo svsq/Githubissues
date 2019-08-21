@@ -1,6 +1,6 @@
 package com.paulsoja.githubissues.presentation.di.module
 
-import com.paulsoja.githubissues.presentation.navigation.IssueRouter
+import com.paulsoja.githubissues.presentation.navigation.router.IssueRouter
 import dagger.Module
 import dagger.Provides
 import ru.terrakok.cicerone.Cicerone

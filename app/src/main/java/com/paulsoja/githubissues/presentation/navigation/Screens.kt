@@ -9,4 +9,9 @@ object Screens {
         override fun getFragment() = Fragment()
     }
 
+    // Login flow
+    object LoginFlowScreen : SupportAppScreen() {
+        override fun getFragment() = Fragment()
+    }
+
 }
