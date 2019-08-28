@@ -1,6 +1,6 @@
 package com.paulsoja.githubissues.data
 
-import com.paulsoja.githubissues.domain.PreferencesRepository
+import com.paulsoja.githubissues.domain.repository.PreferencesRepository
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject

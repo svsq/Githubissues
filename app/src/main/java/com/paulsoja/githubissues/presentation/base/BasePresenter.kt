@@ -5,7 +5,7 @@ import com.arellomobile.mvp.MvpView
 import com.google.gson.stream.MalformedJsonException
 import com.paulsoja.githubissues.data.RetrofitException
 import com.paulsoja.githubissues.data.model.server_error.ServerErrorResponse
-import com.paulsoja.githubissues.domain.PreferencesRepository
+import com.paulsoja.githubissues.domain.repository.PreferencesRepository
 import com.paulsoja.githubissues.presentation.navigation.router.IssueRouter
 import io.reactivex.disposables.CompositeDisposable
 import java.net.SocketTimeoutException
@@ -34,7 +34,7 @@ open class BasePresenter<V : MvpView> : MvpPresenter<V>() {
     open fun handleServerError(code: Int, error: ServerErrorResponse?) {
         if (code == 401) {
             preferencesRepository.clear()
-            issueRouter.startLoginFlow()
+            issueRouter.startSampleScreen()
         } else {
             // parse error - example
             (viewState as? BaseView)?.showHttpError(error!!.errors[0].description, shouldReloadOnError)

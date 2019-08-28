@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.domain
+package com.paulsoja.githubissues.domain.repository
 
 interface PreferencesRepository {
 

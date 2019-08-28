@@ -2,7 +2,7 @@ package com.paulsoja.githubissues.data.repository
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import com.paulsoja.githubissues.domain.PreferencesRepository
+import com.paulsoja.githubissues.domain.repository.PreferencesRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
