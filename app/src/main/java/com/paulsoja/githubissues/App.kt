@@ -5,10 +5,10 @@ import com.paulsoja.githubissues.presentation.IssueInjector
 import com.paulsoja.githubissues.presentation.di.DaggerAppComponent
 import com.paulsoja.githubissues.presentation.di.module.AppModule
 
-class IssueApplication : Application() {
+class App : Application() {
 
     companion object {
-        lateinit var issueApplication: IssueApplication
+        lateinit var issueApplication: App
     }
 
     override fun onCreate() {
@@ -24,5 +24,4 @@ class IssueApplication : Application() {
                 .build()
         )
     }
-
 }
