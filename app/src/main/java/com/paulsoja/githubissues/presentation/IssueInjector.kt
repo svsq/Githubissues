@@ -7,7 +7,8 @@ import com.paulsoja.githubissues.presentation.ui.activity.AppActivity
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityModule
 import com.paulsoja.githubissues.presentation.ui.login_flow.LoginFlowComponent
 import com.paulsoja.githubissues.presentation.ui.sample_flow.SampleFlowComponent
-import com.paulsoja.githubissues.presentation.ui.sample_flow.sample.SampleComponent
+import com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first.SampleComponent
+import com.paulsoja.githubissues.presentation.ui.sample_flow.sample_second.SampleSecondComponent
 
 object IssueInjector {
 
@@ -41,6 +42,7 @@ object IssueInjector {
 
     private var sampleFlowComponent: SampleFlowComponent? = null
     private var sampleComponent: SampleComponent? = null
+    private var sampleSecondComponent: SampleSecondComponent? = null
 
     fun plusSampleFlowComponent(): SampleFlowComponent? {
         return activityComponent?.plusSampleFlowComponent().also {
@@ -60,9 +62,21 @@ object IssueInjector {
         }
     }
 
-    fun clearSampleCOmponent(closedComponent: BaseComponent?) {
+    fun clearSampleComponent(closedComponent: BaseComponent?) {
         if (closedComponent === sampleComponent) {
             sampleComponent = null
+        }
+    }
+
+    fun plusSampleSecondComponent(): SampleSecondComponent? {
+        return sampleFlowComponent?.plusSampleSecondComponent().also {
+            sampleSecondComponent = it
+        }
+    }
+
+    fun clearSampleSecondComponent(closedComponent: BaseComponent?) {
+        if (closedComponent === sampleSecondComponent) {
+            sampleSecondComponent = null
         }
     }
 

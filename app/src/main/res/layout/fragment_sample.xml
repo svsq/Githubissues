@@ -18,6 +18,12 @@
             android:text="sample list data" />
 
     <Button
+            android:id="@+id/btnSecondSample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="second sample screen" />
+
+    <Button
             android:id="@+id/sampleBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

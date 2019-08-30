@@ -1,8 +1,9 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow.sample
+package com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first
 
 import com.arellomobile.mvp.InjectViewState
 import com.paulsoja.githubissues.domain.interactor.sample.GetSampleUseCase
 import com.paulsoja.githubissues.presentation.base.BasePresenter
+import com.paulsoja.githubissues.presentation.navigation.Screens
 import com.paulsoja.githubissues.presentation.navigation.router.FlowRouter
 import io.reactivex.rxkotlin.plusAssign
 import javax.inject.Inject
@@ -30,6 +31,10 @@ class SamplePresenter @Inject constructor(
             }, { throwable ->
                 handleRetrofitError(throwable)
             })
+    }
+
+    fun goToSecondSample() {
+        flowRouter.navigateTo(Screens.SampleSecondScreen)
     }
 
     fun finish() {
