@@ -5,6 +5,7 @@ import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityComponent
 import com.paulsoja.githubissues.presentation.ui.activity.AppActivity
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityModule
+import com.paulsoja.githubissues.presentation.ui.issue_flow.IssueFlowComponent
 import com.paulsoja.githubissues.presentation.ui.login_flow.LoginFlowComponent
 import com.paulsoja.githubissues.presentation.ui.sample_flow.SampleFlowComponent
 import com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first.SampleComponent
@@ -34,6 +35,24 @@ object IssueInjector {
 
     fun clearActivityComponent() {
         activityComponent = null
+    }
+
+    // -----------------------------------------------------------
+    //                     Issue
+    // -----------------------------------------------------------
+
+    private var issueFlowComponent: IssueFlowComponent? = null
+
+    fun plusIssueFlowComponent(): IssueFlowComponent? {
+        return activityComponent?.plusIssueFlowComponent().also {
+            issueFlowComponent = it
+        }
+    }
+
+    fun clearIssueFlowComponent(closedComponent: BaseComponent?) {
+        if (closedComponent === issueFlowComponent) {
+            issueFlowComponent = null
+        }
     }
 
     // -----------------------------------------------------------
