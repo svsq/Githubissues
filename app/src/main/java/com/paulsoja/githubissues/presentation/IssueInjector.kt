@@ -6,6 +6,7 @@ import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityComponent
 import com.paulsoja.githubissues.presentation.ui.activity.AppActivity
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityModule
 import com.paulsoja.githubissues.presentation.ui.issue_flow.IssueFlowComponent
+import com.paulsoja.githubissues.presentation.ui.issue_flow.card_issue.IssueCardComponent
 import com.paulsoja.githubissues.presentation.ui.login_flow.LoginFlowComponent
 import com.paulsoja.githubissues.presentation.ui.sample_flow.SampleFlowComponent
 import com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first.SampleComponent
@@ -42,6 +43,7 @@ object IssueInjector {
     // -----------------------------------------------------------
 
     private var issueFlowComponent: IssueFlowComponent? = null
+    private var issueCardComponent: IssueCardComponent? = null
 
     fun plusIssueFlowComponent(): IssueFlowComponent? {
         return activityComponent?.plusIssueFlowComponent().also {
@@ -52,6 +54,18 @@ object IssueInjector {
     fun clearIssueFlowComponent(closedComponent: BaseComponent?) {
         if (closedComponent === issueFlowComponent) {
             issueFlowComponent = null
+        }
+    }
+
+    fun plusIssueCardComponent(): IssueCardComponent? {
+        return issueFlowComponent?.plusIssueCardComponent().also {
+            issueCardComponent = it
+        }
+    }
+
+    fun clearIssueCardComponent(closedComponent: BaseComponent?) {
+        if (closedComponent === issueCardComponent) {
+            issueCardComponent = null
         }
     }
 
