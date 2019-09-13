@@ -10,12 +10,16 @@ class IssueDataRepository @Inject constructor(
     private val api: IssueApi
 ) : IssueRepository {
 
-    override fun getSingleIssue(repo: String, owner: String, issueNumber: String): Single<SingleIssue> {
+    override fun getSingleIssue(
+        repo: String,
+        owner: String,
+        issueNumber: String
+    ): Single<SingleIssue> {
         return api.getIssueById(repo, owner, issueNumber).map {
             // TODO
             SingleIssue(
-            it.createdAt,
-            it.closedAt!!
+                it.createdAt,
+                it.closedAt!!
             )
         }
     }
