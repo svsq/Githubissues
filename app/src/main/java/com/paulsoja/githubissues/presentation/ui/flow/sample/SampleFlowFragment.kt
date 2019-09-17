@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow
+package com.paulsoja.githubissues.presentation.ui.flow.sample
 
 import androidx.core.os.bundleOf
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -32,13 +32,13 @@ class SampleFlowFragment : FlowFragment(), SampleFlowView {
     fun providePresenter(): SampleFlowPresenter {
         return presenter.apply {
             arguments?.let {
-                screenState = it.getParcelable<SampleScreenState>(STATE_ARG)!!
+                screenState = it.get(STATE_ARG) as SampleScreenState
             }
         }
     }
 
     override fun injectDaggerDependency(): BaseComponent? {
-        return IssueInjector.plusSampleFlowComponent()?.also {
+        return IssueInjector.addSampleFlowComponent()?.also {
             it.inject(this)
         }
     }

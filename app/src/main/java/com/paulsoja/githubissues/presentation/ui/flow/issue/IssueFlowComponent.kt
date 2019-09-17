@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.login_flow
+package com.paulsoja.githubissues.presentation.ui.flow.issue
 
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.di.module.FlowNavigationModule
@@ -7,8 +7,7 @@ import dagger.Subcomponent
 
 @PerFlow
 @Subcomponent(modules = [FlowNavigationModule::class])
-interface LoginFlowComponent : BaseComponent {
-    //fun plusPhoneFragmentComponent(): PhoneFragmentComponent
+interface IssueFlowComponent : BaseComponent {
 
-    fun inject(loginFlowFragment: LoginFlowFragment)
+    fun inject(issueFlowFragment: IssueFlowFragment)
 }
