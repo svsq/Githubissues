@@ -51,7 +51,7 @@ class SampleFragment : BaseFragment(), SampleView {
     fun providePresenter(): SamplePresenter {
         return presenter.apply {
             arguments?.let {
-                screenState = it.getParcelable<SampleScreenState>(STATE_ARG)!!
+                screenState = it.getParcelable(STATE_ARG) ?: SampleScreenState.SAMPLE_1
             }
         }
     }

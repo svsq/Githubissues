@@ -6,6 +6,7 @@ import com.paulsoja.githubissues.presentation.ui.activity.AppActivity
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityComponent
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityModule
 import com.paulsoja.githubissues.presentation.ui.flow.issue.IssueFlowComponent
+import com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue.IssueCardComponent
 import com.paulsoja.githubissues.presentation.ui.flow.login.LoginFlowComponent
 import com.paulsoja.githubissues.presentation.ui.flow.sample.SampleFlowComponent
 import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first.SampleComponent
@@ -35,6 +36,37 @@ object IssueInjector {
 
     fun clearActivityComponent() {
         activityComponent = null
+    }
+
+    // -----------------------------------------------------------
+    //                     Issue
+    // -----------------------------------------------------------
+
+    private var issueFlowComponent: IssueFlowComponent? = null
+    private var issueCardComponent: IssueCardComponent? = null
+
+    fun plusIssueFlowComponent(): IssueFlowComponent? {
+        return activityComponent?.plusIssueFlowComponent().also {
+            issueFlowComponent = it
+        }
+    }
+
+    fun clearIssueFlowComponent(closedComponent: BaseComponent?) {
+        if (closedComponent === issueFlowComponent) {
+            issueFlowComponent = null
+        }
+    }
+
+    fun plusIssueCardComponent(): IssueCardComponent? {
+        return issueFlowComponent?.plusIssueCardComponent().also {
+            issueCardComponent = it
+        }
+    }
+
+    fun clearIssueCardComponent(closedComponent: BaseComponent?) {
+        if (closedComponent === issueCardComponent) {
+            issueCardComponent = null
+        }
     }
 
     // -----------------------------------------------------------
