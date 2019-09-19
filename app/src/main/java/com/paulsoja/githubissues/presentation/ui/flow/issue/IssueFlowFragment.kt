@@ -1,12 +1,32 @@
 package com.paulsoja.githubissues.presentation.ui.flow.issue
 
+import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.paulsoja.githubissues.presentation.IssueInjector
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.navigation.FlowFragment
+import javax.inject.Inject
 
-class IssueFlowFragment : FlowFragment(), IssueFlowView {
+class IssueFlowFragment : FlowFragment(),
+    IssueFlowView {
+
+    companion object {
+        fun newInstance() = IssueFlowFragment()
+    }
+
+    override fun initLaunchScreen() {
+        //navigator.setLaunchScreen(Screens)
+    }
+
+    @Inject
+    @InjectPresenter
+    lateinit var presenter: IsuueFlowPresenter
+
+    @ProvidePresenter
+    fun providePresenter() = presenter
+
     override fun injectDaggerDependency(): BaseComponent? {
-        return IssueInjector.addIssueFlowComponent()?.also {
+        return IssueInjector.plusIssueFlowComponent()?.also {
             it.inject(this)
         }
     }
@@ -15,11 +35,4 @@ class IssueFlowFragment : FlowFragment(), IssueFlowView {
         IssueInjector.clearIssueFlowComponent(closedComponent)
     }
 
-    override fun initIssuesListScreen() {
-        //TODO
-    }
-
-    override fun initIssueDetailsScreen() {
-        //TODO
-    }
 }

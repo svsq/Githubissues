@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.issue_flow.card_issue
+package com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
@@ -8,10 +8,12 @@ import com.paulsoja.githubissues.presentation.base.BaseFragment
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import javax.inject.Inject
 
-class IssueCardFragment : BaseFragment(), IssueCardView {
+class IssueCardFragment : BaseFragment(),
+    IssueCardView {
 
     companion object {
-        fun newInstance() = IssueCardFragment()
+        fun newInstance() =
+            IssueCardFragment()
     }
 
     override val layoutRes: Int = R.layout.fragment_issue_card
