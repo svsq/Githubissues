@@ -2,15 +2,15 @@ package com.paulsoja.githubissues.presentation
 
 import com.paulsoja.githubissues.presentation.di.AppComponent
 import com.paulsoja.githubissues.presentation.di.BaseComponent
-import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityComponent
 import com.paulsoja.githubissues.presentation.ui.activity.AppActivity
+import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityComponent
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityModule
-import com.paulsoja.githubissues.presentation.ui.issue_flow.IssueFlowComponent
-import com.paulsoja.githubissues.presentation.ui.issue_flow.card_issue.IssueCardComponent
-import com.paulsoja.githubissues.presentation.ui.login_flow.LoginFlowComponent
-import com.paulsoja.githubissues.presentation.ui.sample_flow.SampleFlowComponent
-import com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first.SampleComponent
-import com.paulsoja.githubissues.presentation.ui.sample_flow.sample_second.SampleSecondComponent
+import com.paulsoja.githubissues.presentation.ui.flow.issue.IssueFlowComponent
+import com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue.IssueCardComponent
+import com.paulsoja.githubissues.presentation.ui.flow.login.LoginFlowComponent
+import com.paulsoja.githubissues.presentation.ui.flow.sample.SampleFlowComponent
+import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first.SampleComponent
+import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_second.SampleSecondComponent
 
 object IssueInjector {
 
@@ -26,7 +26,7 @@ object IssueInjector {
 
     private var activityComponent: ActivityComponent? = null
 
-    fun plusActivityComponent(activity: AppActivity): ActivityComponent? {
+    fun addActivityComponent(activity: AppActivity): ActivityComponent? {
         return appComponent?.plusActivityComponent(
             ActivityModule(activity)
         ).also {
@@ -46,7 +46,7 @@ object IssueInjector {
     private var issueCardComponent: IssueCardComponent? = null
 
     fun plusIssueFlowComponent(): IssueFlowComponent? {
-        return activityComponent?.plusIssueFlowComponent().also {
+        return activityComponent?.addIssueFlowComponent().also {
             issueFlowComponent = it
         }
     }
@@ -77,8 +77,8 @@ object IssueInjector {
     private var sampleComponent: SampleComponent? = null
     private var sampleSecondComponent: SampleSecondComponent? = null
 
-    fun plusSampleFlowComponent(): SampleFlowComponent? {
-        return activityComponent?.plusSampleFlowComponent().also {
+    fun addSampleFlowComponent(): SampleFlowComponent? {
+        return activityComponent?.addSampleFlowComponent().also {
             sampleFlowComponent = it
         }
     }
@@ -89,8 +89,8 @@ object IssueInjector {
         }
     }
 
-    fun plusSampleComponent(): SampleComponent? {
-        return sampleFlowComponent?.plusSampleFragmentComponent().also {
+    fun addSampleComponent(): SampleComponent? {
+        return sampleFlowComponent?.addSampleFragmentComponent().also {
             sampleComponent = it
         }
     }
@@ -101,8 +101,8 @@ object IssueInjector {
         }
     }
 
-    fun plusSampleSecondComponent(): SampleSecondComponent? {
-        return sampleFlowComponent?.plusSampleSecondComponent().also {
+    fun addSampleSecondComponent(): SampleSecondComponent? {
+        return sampleFlowComponent?.addSampleSecondComponent().also {
             sampleSecondComponent = it
         }
     }
@@ -119,8 +119,8 @@ object IssueInjector {
 
     private var loginFlowComponent: LoginFlowComponent? = null
 
-    fun plusLoginFlowComponent(): LoginFlowComponent? {
-        return activityComponent?.plusLoginFlowComponent().also {
+    fun addLoginFlowComponent(): LoginFlowComponent? {
+        return activityComponent?.addLoginFlowComponent().also {
             loginFlowComponent = it
         }
     }

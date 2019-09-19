@@ -1,13 +1,11 @@
-package com.paulsoja.githubissues.presentation.ui.issue_flow
+package com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue
 
 import com.arellomobile.mvp.InjectViewState
 import com.paulsoja.githubissues.presentation.base.BasePresenter
-import com.paulsoja.githubissues.presentation.di.scope.PerFlow
 import javax.inject.Inject
 
-@PerFlow
 @InjectViewState
-class IsuueFlowPresenter @Inject constructor() : BasePresenter<IssueFlowView>() {
+class IssueCardPresenter @Inject constructor() : BasePresenter<IssueCardView>() {
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()

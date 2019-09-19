@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.issue_flow.card_issue
+package com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first
 
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.di.scope.PerFragment
@@ -6,6 +6,6 @@ import dagger.Subcomponent
 
 @PerFragment
 @Subcomponent
-interface IssueCardComponent : BaseComponent {
-    fun inject(issueCardFragment: IssueCardFragment)
+interface SampleComponent : BaseComponent {
+    fun inject(sampleFragment: SampleFragment)
 }

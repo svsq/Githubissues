@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first.list
+package com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first.list
 
 import android.view.View
 import android.view.ViewGroup

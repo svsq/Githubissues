@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first
+package com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first
 
 import com.arellomobile.mvp.InjectViewState
 import com.paulsoja.githubissues.domain.interactor.sample.GetSampleUseCase

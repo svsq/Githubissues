@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.issue_flow.card_issue
+package com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue
 
 import com.paulsoja.githubissues.presentation.base.BaseView
 

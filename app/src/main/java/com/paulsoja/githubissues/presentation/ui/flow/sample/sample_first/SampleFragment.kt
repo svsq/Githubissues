@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first
+package com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first
 
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,7 +10,7 @@ import com.paulsoja.githubissues.presentation.IssueInjector
 import com.paulsoja.githubissues.presentation.base.BaseFragment
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.model.SampleMarker
-import com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first.list.SampleAdapter
+import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first.list.SampleAdapter
 import com.paulsoja.githubissues.presentation.utils.onClick
 import kotlinx.android.synthetic.main.fragment_sample.*
 import javax.inject.Inject
@@ -30,7 +30,7 @@ class SampleFragment : BaseFragment(), SampleView {
     override val layoutRes: Int = R.layout.fragment_sample
 
     override fun injectDaggerDependency(): BaseComponent? {
-        return IssueInjector.plusSampleComponent()?.also {
+        return IssueInjector.addSampleComponent()?.also {
             it.inject(this)
         }
     }
