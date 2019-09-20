@@ -10,6 +10,7 @@ import com.paulsoja.githubissues.BuildConfig
 import com.paulsoja.githubissues.BuildConfig.BASE_URL
 import com.paulsoja.githubissues.data.HttpAuthInterceptor
 import com.paulsoja.githubissues.data.RxErrorHandlingCallAdapterFactory
+import com.paulsoja.githubissues.data.net.IssueApi
 import com.paulsoja.githubissues.data.net.SampleApi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -75,6 +76,12 @@ class ApiModule {
     @Singleton
     fun provideSampleApi(retrofit: Retrofit): SampleApi {
         return retrofit.create(SampleApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideIssueApi(retrofit: Retrofit): IssueApi {
+        return retrofit.create(IssueApi::class.java)
     }
 
     /*@Provides

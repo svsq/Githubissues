@@ -15,7 +15,7 @@ import com.paulsoja.githubissues.presentation.utils.onClick
 import kotlinx.android.synthetic.main.fragment_sample.*
 import javax.inject.Inject
 
-class SampleFragment : BaseFragment(), SampleView {
+class SampleFragment : BaseFragment(R.layout.fragment_sample), SampleView {
 
     companion object {
         private const val STATE_ARG = "SCREEN_TYPE"
@@ -26,8 +26,6 @@ class SampleFragment : BaseFragment(), SampleView {
             }
         }
     }
-
-    override val layoutRes: Int = R.layout.fragment_sample
 
     override fun injectDaggerDependency(): BaseComponent? {
         return IssueInjector.addSampleComponent()?.also {

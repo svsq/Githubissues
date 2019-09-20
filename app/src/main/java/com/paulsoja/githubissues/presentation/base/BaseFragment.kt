@@ -11,9 +11,7 @@ import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.ui.view.CorrectMessageDialog
 import javax.inject.Inject
 
-abstract class BaseFragment : MvpAppCompatFragment(), BaseView {
-
-    protected abstract val layoutRes: Int
+abstract class BaseFragment(private val layoutRes: Int) : MvpAppCompatFragment(), BaseView {
 
     @Inject
     protected lateinit var errorDialog: CorrectMessageDialog

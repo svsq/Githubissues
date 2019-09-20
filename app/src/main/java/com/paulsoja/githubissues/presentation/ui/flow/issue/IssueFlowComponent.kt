@@ -9,7 +9,7 @@ import dagger.Subcomponent
 @PerFlow
 @Subcomponent(modules = [FlowNavigationModule::class])
 interface IssueFlowComponent : BaseComponent {
-    fun plusIssueCardComponent(): IssueCardComponent
+    fun addIssueCardComponent(): IssueCardComponent
 
     fun inject(issueFlowFragment: IssueFlowFragment)
 }

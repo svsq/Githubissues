@@ -8,15 +8,13 @@ import com.paulsoja.githubissues.presentation.base.BaseFragment
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import javax.inject.Inject
 
-class IssueCardFragment : BaseFragment(),
+class IssueCardFragment : BaseFragment(R.layout.fragment_issue_card),
     IssueCardView {
 
     companion object {
         fun newInstance() =
             IssueCardFragment()
     }
-
-    override val layoutRes: Int = R.layout.fragment_issue_card
 
     override fun injectDaggerDependency(): BaseComponent? {
         return IssueInjector.plusIssueCardComponent()?.also {

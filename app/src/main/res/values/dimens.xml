@@ -37,7 +37,6 @@
 	<dimen name="default_double_icon_size">48dp</dimen>
 	<dimen name="default_triple_icon_size">72dp</dimen>
 	<dimen name="default_ripple_btn_size">40dp</dimen>
-	<dimen name="map_pickup_icon_size">12dp</dimen>
 
 	<!-- Other sizes -->
 	<dimen name="tab_button_height">40dp</dimen>

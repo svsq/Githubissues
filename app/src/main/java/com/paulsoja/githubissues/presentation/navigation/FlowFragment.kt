@@ -13,9 +13,7 @@ import ru.terrakok.cicerone.android.support.SupportAppScreen
 import ru.terrakok.cicerone.commands.Command
 import javax.inject.Inject
 
-abstract class FlowFragment : BaseFragment() {
-
-    override val layoutRes: Int = R.layout.layout_container
+abstract class FlowFragment : BaseFragment(R.layout.layout_container) {
 
     private val currentFragment
         get() = childFragmentManager.findFragmentById(R.id.container) as? BaseFragment
