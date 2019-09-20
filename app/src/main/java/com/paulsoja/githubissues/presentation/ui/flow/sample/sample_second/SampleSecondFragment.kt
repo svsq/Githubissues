@@ -10,13 +10,11 @@ import com.paulsoja.githubissues.presentation.utils.onClick
 import kotlinx.android.synthetic.main.fragment_sample_second.*
 import javax.inject.Inject
 
-class SampleSecondFragment : BaseFragment(), SampleSecondView {
+class SampleSecondFragment : BaseFragment(R.layout.fragment_sample_second), SampleSecondView {
 
     companion object {
         fun newInstance() = SampleSecondFragment()
     }
-
-    override val layoutRes: Int = R.layout.fragment_sample_second
 
     override fun injectDaggerDependency(): BaseComponent? {
         return IssueInjector.addSampleSecondComponent()?.also {

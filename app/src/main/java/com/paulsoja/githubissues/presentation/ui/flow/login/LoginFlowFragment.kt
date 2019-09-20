@@ -17,8 +17,6 @@ class LoginFlowFragment : FlowFragment() {
     @Inject
     lateinit var flowRouter: FlowRouter
 
-    override val layoutRes: Int = R.layout.layout_container
-
     override fun injectDaggerDependency(): BaseComponent? {
         return IssueInjector.addLoginFlowComponent()?.also {
             it.inject(this)

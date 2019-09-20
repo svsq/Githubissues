@@ -58,7 +58,7 @@ object IssueInjector {
     }
 
     fun plusIssueCardComponent(): IssueCardComponent? {
-        return issueFlowComponent?.plusIssueCardComponent().also {
+        return issueFlowComponent?.addIssueCardComponent().also {
             issueCardComponent = it
         }
     }
