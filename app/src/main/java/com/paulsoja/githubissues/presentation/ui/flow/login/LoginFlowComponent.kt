@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.login_flow
+package com.paulsoja.githubissues.presentation.ui.flow.login
 
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.di.module.FlowNavigationModule

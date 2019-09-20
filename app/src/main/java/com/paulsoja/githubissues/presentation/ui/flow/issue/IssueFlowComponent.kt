@@ -1,9 +1,9 @@
-package com.paulsoja.githubissues.presentation.ui.issue_flow
+package com.paulsoja.githubissues.presentation.ui.flow.issue
 
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.di.module.FlowNavigationModule
 import com.paulsoja.githubissues.presentation.di.scope.PerFlow
-import com.paulsoja.githubissues.presentation.ui.issue_flow.card_issue.IssueCardComponent
+import com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue.IssueCardComponent
 import dagger.Subcomponent
 
 @PerFlow

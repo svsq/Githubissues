@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first
+package com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first
 
 import com.paulsoja.githubissues.presentation.base.BaseView
 import com.paulsoja.githubissues.presentation.model.SampleMarker

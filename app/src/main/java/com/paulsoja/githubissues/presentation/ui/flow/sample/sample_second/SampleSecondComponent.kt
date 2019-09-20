@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow.sample_first
+package com.paulsoja.githubissues.presentation.ui.flow.sample.sample_second
 
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.di.scope.PerFragment
@@ -6,6 +6,6 @@ import dagger.Subcomponent
 
 @PerFragment
 @Subcomponent
-interface SampleComponent : BaseComponent {
-    fun inject(sampleFragment: SampleFragment)
+interface SampleSecondComponent : BaseComponent {
+    fun inject(sampleSecondFragment: SampleSecondFragment)
 }

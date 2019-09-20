@@ -36,7 +36,7 @@ class AppActivity : BaseActivity(), MainView {
         }
 
     override fun injectDependency() {
-        IssueInjector.plusActivityComponent(this)?.inject(this)
+        IssueInjector.addActivityComponent(this)?.inject(this)
     }
 
     @Inject

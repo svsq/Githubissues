@@ -1,13 +1,11 @@
-package com.paulsoja.githubissues.presentation.ui.login_flow
+package com.paulsoja.githubissues.presentation.ui.flow.login
 
 import android.os.Bundle
 import com.paulsoja.githubissues.R
 import com.paulsoja.githubissues.presentation.IssueInjector
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.navigation.FlowFragment
-import com.paulsoja.githubissues.presentation.navigation.Screens
 import com.paulsoja.githubissues.presentation.navigation.router.FlowRouter
-import com.paulsoja.githubissues.presentation.utils.setLaunchScreen
 import javax.inject.Inject
 
 class LoginFlowFragment : FlowFragment() {
@@ -22,7 +20,7 @@ class LoginFlowFragment : FlowFragment() {
     override val layoutRes: Int = R.layout.layout_container
 
     override fun injectDaggerDependency(): BaseComponent? {
-        return IssueInjector.plusLoginFlowComponent()?.also {
+        return IssueInjector.addLoginFlowComponent()?.also {
             it.inject(this)
         }
     }

@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.sample_flow.sample_second
+package com.paulsoja.githubissues.presentation.ui.flow.sample.sample_second
 
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
@@ -19,7 +19,7 @@ class SampleSecondFragment : BaseFragment(), SampleSecondView {
     override val layoutRes: Int = R.layout.fragment_sample_second
 
     override fun injectDaggerDependency(): BaseComponent? {
-        return IssueInjector.plusSampleSecondComponent()?.also {
+        return IssueInjector.addSampleSecondComponent()?.also {
             it.inject(this)
         }
     }
