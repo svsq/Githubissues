@@ -11,6 +11,7 @@ class IsuueFlowPresenter @Inject constructor() : BasePresenter<IssueFlowView>() 
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
+        viewState.initLaunchScreen()
     }
 
 }

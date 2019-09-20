@@ -34,7 +34,7 @@ open class BasePresenter<V : MvpView> : MvpPresenter<V>() {
     open fun handleServerError(code: Int, error: ServerErrorResponse?) {
         if (code == 401) {
             preferencesRepository.clear()
-            issueRouter.startSampleScreen()
+            issueRouter.startIssueScreen()
         } else {
             // parse error - example
             (viewState as? BaseView)?.showHttpError(error!!.errors[0].description, shouldReloadOnError)
@@ -47,7 +47,6 @@ open class BasePresenter<V : MvpView> : MvpPresenter<V>() {
 
     protected fun handleRetrofitError(e: Throwable) {
         if (e is RetrofitException) {
-
             try {
                 val err = e.getErrorBodyAs(ServerErrorResponse::class.java)
                 when (e.serverErrorType) {

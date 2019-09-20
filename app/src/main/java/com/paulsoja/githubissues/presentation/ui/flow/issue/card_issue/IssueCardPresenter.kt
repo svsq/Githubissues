@@ -8,7 +8,7 @@ import javax.inject.Inject
 class IssueCardPresenter @Inject constructor() : BasePresenter<IssueCardView>() {
 
     override fun onFirstViewAttach() {
-        super.onFirstViewAttach()
+        viewState.initViews()
     }
 
 }

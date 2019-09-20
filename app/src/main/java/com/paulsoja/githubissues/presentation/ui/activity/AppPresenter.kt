@@ -13,7 +13,7 @@ class AppPresenter @Inject constructor(
 ) : BasePresenter<MainView>() {
 
     fun coldStart() {
-        router.startSampleScreen()
+        router.startIssueScreen()
         /*when {
             preferencesRepository.getToken() == null -> router.startLoginFlow()
             else -> router.startMainFlow()

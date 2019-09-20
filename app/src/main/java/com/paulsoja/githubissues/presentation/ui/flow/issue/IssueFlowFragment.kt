@@ -5,17 +5,18 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.paulsoja.githubissues.presentation.IssueInjector
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.navigation.FlowFragment
+import com.paulsoja.githubissues.presentation.navigation.Screens
+import com.paulsoja.githubissues.presentation.utils.setLaunchScreen
 import javax.inject.Inject
 
-class IssueFlowFragment : FlowFragment(),
-    IssueFlowView {
+class IssueFlowFragment : FlowFragment(), IssueFlowView {
 
     companion object {
         fun newInstance() = IssueFlowFragment()
     }
 
     override fun initLaunchScreen() {
-        //navigator.setLaunchScreen(Screens)
+        navigator.setLaunchScreen(Screens.IssueCardScreen)
     }
 
     @Inject

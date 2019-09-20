@@ -8,12 +8,10 @@ import com.paulsoja.githubissues.presentation.base.BaseFragment
 import com.paulsoja.githubissues.presentation.di.BaseComponent
 import javax.inject.Inject
 
-class IssueCardFragment : BaseFragment(R.layout.fragment_issue_card),
-    IssueCardView {
+class IssueCardFragment : BaseFragment(R.layout.fragment_issue_card), IssueCardView {
 
     companion object {
-        fun newInstance() =
-            IssueCardFragment()
+        fun newInstance() = IssueCardFragment()
     }
 
     override fun injectDaggerDependency(): BaseComponent? {
@@ -24,6 +22,10 @@ class IssueCardFragment : BaseFragment(R.layout.fragment_issue_card),
 
     override fun releaseDaggerDependency() {
         IssueInjector.clearIssueCardComponent(closedComponent)
+    }
+
+    override fun initViews() {
+
     }
 
     @Inject
