@@ -5,6 +5,6 @@ import io.reactivex.Single
 
 interface IssueRepository {
 
-    fun getSingleIssue(repo: String, owner: String, issueNumber: String): Single<SingleIssue>
+    fun getSingleIssue(owner: String, repo: String, issueNumber: Int): Single<SingleIssue>
 
 }

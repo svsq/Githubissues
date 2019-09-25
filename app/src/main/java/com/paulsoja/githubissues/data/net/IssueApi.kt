@@ -7,11 +7,11 @@ import retrofit2.http.Path
 
 interface IssueApi {
 
-    @GET("repos/{owner}/{repo}/{issue_number}")
+    @GET("repos/{owner}/{repo}/issues/{issue_number}")
     fun getIssueById(
         @Path("owner") owner: String,
         @Path("repo") repo: String,
-        @Path("issue_number") issueNumber: String
+        @Path("issue_number") issueNumber: Int
     ): Single<SingleIssueApiModel>
 
 }

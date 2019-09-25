@@ -15,7 +15,7 @@ data class SingleIssueApiModel(
     @SerializedName("number") val issueNumber: Int,
     @SerializedName("title") val issueTitle: String,
     @SerializedName("user") val user: UserApiModel,
-    @SerializedName("labels") val list: List<String> = listOf(),
+    @SerializedName("labels") val labels: List<LabelsApiModel> = listOf(),
     @SerializedName("state") val state: String,
     @SerializedName("locked") val isLocked: Boolean,
     @SerializedName("assignee") val assignee: UserApiModel?,

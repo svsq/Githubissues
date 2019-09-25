@@ -37,7 +37,7 @@ open class BasePresenter<V : MvpView> : MvpPresenter<V>() {
             issueRouter.startIssueScreen()
         } else {
             // parse error - example
-            (viewState as? BaseView)?.showHttpError(error!!.errors[0].description, shouldReloadOnError)
+            //(viewState as? BaseView)?.showHttpError(error!!.errors[0].description, shouldReloadOnError)
         }
     }
 
