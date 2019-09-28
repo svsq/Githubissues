@@ -45,7 +45,7 @@ object IssueInjector {
     private var issueFlowComponent: IssueFlowComponent? = null
     private var issueCardComponent: IssueCardComponent? = null
 
-    fun plusIssueFlowComponent(): IssueFlowComponent? {
+    fun addIssueFlowComponent(): IssueFlowComponent? {
         return activityComponent?.addIssueFlowComponent().also {
             issueFlowComponent = it
         }
@@ -57,7 +57,7 @@ object IssueInjector {
         }
     }
 
-    fun plusIssueCardComponent(): IssueCardComponent? {
+    fun addIssueCardComponent(): IssueCardComponent? {
         return issueFlowComponent?.addIssueCardComponent().also {
             issueCardComponent = it
         }

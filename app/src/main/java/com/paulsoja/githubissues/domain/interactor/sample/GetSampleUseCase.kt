@@ -2,9 +2,6 @@ package com.paulsoja.githubissues.domain.interactor.sample
 
 import com.paulsoja.githubissues.domain.interactor.base.SingleUseCase
 import com.paulsoja.githubissues.domain.mapper.SampleViewModelMapper
-import com.paulsoja.githubissues.domain.model.sample.Sample
-import com.paulsoja.githubissues.domain.model.sample.SampleViewModel
-import com.paulsoja.githubissues.domain.repository.PreferencesRepository
 import com.paulsoja.githubissues.domain.repository.SampleRepository
 import com.paulsoja.githubissues.presentation.model.SampleMainViewModel
 import com.paulsoja.githubissues.presentation.model.SampleMarker

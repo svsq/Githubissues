@@ -17,7 +17,7 @@ class IssueCardFragment : BaseFragment(R.layout.fragment_issue_card),
     }
 
     override fun injectDaggerDependency(): BaseComponent? {
-        return IssueInjector.plusIssueCardComponent()?.also {
+        return IssueInjector.addIssueCardComponent()?.also {
             it.inject(this)
         }
     }

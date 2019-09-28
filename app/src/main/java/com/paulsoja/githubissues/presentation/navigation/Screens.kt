@@ -2,6 +2,7 @@ package com.paulsoja.githubissues.presentation.navigation
 
 import androidx.fragment.app.Fragment
 import com.paulsoja.githubissues.domain.model.sample.SampleScreenState
+import com.paulsoja.githubissues.presentation.ui.flow.issue.IssueFlowFragment
 import com.paulsoja.githubissues.presentation.ui.flow.login.LoginFlowFragment
 import com.paulsoja.githubissues.presentation.ui.flow.sample.SampleFlowFragment
 import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first.SampleFragment
@@ -34,5 +35,10 @@ object Screens {
     // Login flow
     object LoginFlowScreen : SupportAppScreen() {
         override fun getFragment() = LoginFlowFragment.newInstance()
+    }
+
+    // Issue flow
+    object IssueFlowScreen : SupportAppScreen() {
+        override fun getFragment() = IssueFlowFragment.newInstance()
     }
 }
