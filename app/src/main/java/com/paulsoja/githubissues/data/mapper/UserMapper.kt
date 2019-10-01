@@ -4,32 +4,49 @@ import com.paulsoja.githubissues.data.model.user.UserApiModel
 import com.paulsoja.githubissues.domain.model.user.User
 import javax.inject.Inject
 
-class UserMapper @Inject constructor() : Mapper<UserApiModel, User>() {
+class UserMapper @Inject constructor(
+    private val identitiesMapper: IdentitiesMapper
+) : Mapper<UserApiModel, User>() {
+
     override fun reverse(to: User): UserApiModel {
         throw NotImplementedError()
     }
 
     override fun map(from: UserApiModel): User {
         return with(from) {
+            val identities = identities.map { identitiesMapper.map(it) }
             User(
-                login,
                 id,
-                nodeId,
+                name,
+                username,
+                state,
                 avatarUrl,
-                gravatarId,
-                userUrl,
-                htmlUrl,
-                followersUrl,
-                followingUrl,
-                gistsUrl,
-                starredUrl,
-                subscriptionsUrl,
-                organizationsUrl,
-                reposUrl,
-                eventsUrl,
-                receivedEventsUrl,
-                type,
-                siteAdmin
+                webUrl,
+                createdAt,
+                bio,
+                location,
+                publicEmail,
+                skype,
+                linkedin,
+                twitter,
+                websiteUrl,
+                organization,
+                lastSignInAt,
+                confirmedAt,
+                lastActivityOn,
+                email,
+                themeId,
+                colorSchemeId,
+                projectsLimit,
+                currentSignInAt,
+                identities,
+                canCreateGroup,
+                canCreateProject,
+                twoFactorEnabled,
+                external,
+                privateProfile,
+                sharedRunnersMinutesLimit,
+                extraSharedRunnersMinutesLimit
             )
         }
     }

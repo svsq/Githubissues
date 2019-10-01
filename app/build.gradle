@@ -30,7 +30,7 @@ android {
             def relativeRootDir = variant.getPackageApplicationProvider().get().outputs.files[1].toPath()
                     .relativize(rootDir.toPath()).toFile()
             def baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") :
-                    '"https://api.github.com"'
+                    '"https://gitlab.com/api/v4/"'
 
             buildConfigField("String", "BASE_URL", baseUrl)
             def buildNameSuffix = variant.buildType.name != "release" ? "-${variant.buildType.name}" : ""

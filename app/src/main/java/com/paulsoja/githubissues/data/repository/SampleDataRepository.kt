@@ -6,7 +6,9 @@ import com.paulsoja.githubissues.domain.model.sample.Sample
 import com.paulsoja.githubissues.domain.repository.SampleRepository
 import io.reactivex.Single
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class SampleDataRepository @Inject constructor(
     private val api: SampleApi,
     private val sampleMapper: SampleMapper

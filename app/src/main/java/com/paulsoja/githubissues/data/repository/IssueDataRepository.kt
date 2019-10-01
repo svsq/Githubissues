@@ -6,7 +6,9 @@ import com.paulsoja.githubissues.domain.model.issue.SingleIssue
 import com.paulsoja.githubissues.domain.repository.IssueRepository
 import io.reactivex.Single
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class IssueDataRepository @Inject constructor(
     private val api: IssueApi,
     private val issueMapper: IssueMapper
