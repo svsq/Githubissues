@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import com.paulsoja.githubissues.domain.model.sample.SampleScreenState
 import com.paulsoja.githubissues.presentation.ui.flow.issue.IssueFlowFragment
 import com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue.IssueCardFragment
+import com.paulsoja.githubissues.presentation.ui.flow.issue.projects.ProjectsFragment
 import com.paulsoja.githubissues.presentation.ui.flow.login.LoginFlowFragment
 import com.paulsoja.githubissues.presentation.ui.flow.sample.SampleFlowFragment
 import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first.SampleFragment
@@ -19,6 +20,10 @@ object Screens {
     // Issue flow
     object IssueScreenFlow : SupportAppScreen() {
         override fun getFragment() = IssueFlowFragment.newInstance()
+    }
+
+    object ProjectsScreen : SupportAppScreen() {
+        override fun getFragment() = ProjectsFragment.newInstance()
     }
 
     object IssueCardScreen : SupportAppScreen() {

@@ -16,7 +16,7 @@ class IssueFlowFragment : FlowFragment(), IssueFlowView {
     }
 
     override fun initLaunchScreen() {
-        navigator.setLaunchScreen(Screens.IssueCardScreen)
+        navigator.setLaunchScreen(Screens.ProjectsScreen)
     }
 
     @Inject
