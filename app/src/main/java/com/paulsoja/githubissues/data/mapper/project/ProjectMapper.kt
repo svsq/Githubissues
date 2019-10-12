@@ -13,7 +13,7 @@ class ProjectMapper @Inject constructor() : Mapper<ProjectApiModel, Project>() {
 
     override fun map(from: ProjectApiModel): Project {
         return with(from) {
-            Project(id, name, description, avatarUrl)
+            Project(id, name, description, avatarUrl, forksCount.toInt(), starCount.toInt())
         }
     }
 }

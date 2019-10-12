@@ -13,7 +13,7 @@ class ProjectViewModelMapper @Inject constructor() : Mapper<Project, ProjectView
 
     override fun map(from: Project): ProjectViewModel {
         return with(from) {
-            ProjectViewModel(id, title, description, avatar)
+            ProjectViewModel(id, title, description, avatar, forksCount, starCount)
         }
     }
 

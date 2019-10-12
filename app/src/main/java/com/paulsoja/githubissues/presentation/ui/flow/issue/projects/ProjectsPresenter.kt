@@ -20,7 +20,7 @@ class ProjectsPresenter @Inject constructor(
         loadProjects()
     }
 
-    fun loadProjects(visibility: String = "internal") {
+    private fun loadProjects(visibility: String = "internal") {
         val params = GetProjectsUseCase.Params(visibility)
         disposables += getProjectsUseCase.execute(params)
             .doOnSubscribe { viewState.showLoadingDialog() }

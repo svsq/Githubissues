@@ -7,12 +7,14 @@ import com.paulsoja.githubissues.R
 import com.paulsoja.githubissues.presentation.IssueInjector
 import com.paulsoja.githubissues.presentation.base.BaseFragment
 import com.paulsoja.githubissues.presentation.di.BaseComponent
+import com.paulsoja.githubissues.presentation.model.projects.ProjectViewModel
 import com.paulsoja.githubissues.presentation.model.projects.ProjectsMarker
 import com.paulsoja.githubissues.presentation.ui.flow.issue.projects.list.ProjectsAdapter
+import com.paulsoja.githubissues.presentation.utils.toast
 import kotlinx.android.synthetic.main.fragment_projects.*
 import javax.inject.Inject
 
-class ProjectsFragment : BaseFragment(R.layout.fragment_projects), ProjectsView {
+class ProjectsFragment : BaseFragment(R.layout.fragment_projects), ProjectsView, ProjectsAdapter.Callback {
 
     companion object {
         fun newInstance() = ProjectsFragment()
@@ -36,6 +38,7 @@ class ProjectsFragment : BaseFragment(R.layout.fragment_projects), ProjectsView 
     }
 
     private fun initRecyclerView() {
+        adapter.callback = this
         with(rvProjects) {
             layoutManager = LinearLayoutManager(context)
             adapter = this@ProjectsFragment.adapter
@@ -60,6 +63,10 @@ class ProjectsFragment : BaseFragment(R.layout.fragment_projects), ProjectsView 
     }
 
     override fun hideLoadingDialog() {
+    }
+
+    override fun onProject(project: ProjectViewModel) {
+        toast("test")
     }
 
 }
