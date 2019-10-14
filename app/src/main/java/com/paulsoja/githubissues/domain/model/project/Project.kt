@@ -1,10 +1,43 @@
 package com.paulsoja.githubissues.domain.model.project
 
+import com.paulsoja.githubissues.presentation.model.projects.ProjectVisibility
+
 data class Project(
     val id: Long,
-    val title: String?,
     val description: String?,
-    val avatar: String?,
-    val forksCount: Int,
-    val starCount: Int
+    val defaultBranch: String?,
+    val visibility: ProjectVisibility?,
+    val sshUrlToRepo: String?,
+    val httpUrlToRepo: String?,
+    val webUrl: String?,
+    val tagList: List<String>?,
+    val owner: Owner?,
+    val name: String,
+    val nameWithNamespace: String,
+    val path: String,
+    val pathWithNamespace: String,
+    val issuesEnabled: Boolean,
+    val openIssuesCount: Long,
+    val mergeRequestsEnabled: Boolean,
+    val jobsEnabled: Boolean,
+    val wikiEnabled: Boolean,
+    val snippetsEnabled: Boolean,
+    val containerRegistryEnabled: Boolean,
+    val createdAt: String?,
+    val lastActivityAt: String?,
+    val creatorId: Long,
+    val namespace: Namespace?,
+    val permissions: Permissions?,
+    val archived: Boolean,
+    val avatarUrl: String?,
+    val sharedRunnersEnabled: Boolean,
+    val forksCount: Long,
+    val starCount: Long,
+    val runnersToken: String?,
+    val publicJobs: Boolean,
+    val sharedWithGroups: List<SharedWithGroup>?,
+    val onlyAllowMergeIfPipelineSucceeds: Boolean,
+    val onlyAllowMergeIfAllDiscussionsAreResolved: Boolean,
+    val requestAccessEnabled: Boolean,
+    val readmeUrl: String?
 )
