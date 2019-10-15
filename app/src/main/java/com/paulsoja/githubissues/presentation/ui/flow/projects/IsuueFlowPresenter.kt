@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.flow.issue
+package com.paulsoja.githubissues.presentation.ui.flow.projects
 
 import com.arellomobile.mvp.InjectViewState
 import com.paulsoja.githubissues.presentation.base.BasePresenter
@@ -11,6 +11,7 @@ class IsuueFlowPresenter @Inject constructor() : BasePresenter<IssueFlowView>() 
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
+        viewState.initLaunchScreen()
     }
 
 }

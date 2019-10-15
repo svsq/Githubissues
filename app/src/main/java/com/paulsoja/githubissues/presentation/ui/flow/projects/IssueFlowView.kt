@@ -1,4 +1,4 @@
-package com.paulsoja.githubissues.presentation.ui.flow.issue
+package com.paulsoja.githubissues.presentation.ui.flow.projects
 
 import com.paulsoja.githubissues.presentation.base.BaseView
 

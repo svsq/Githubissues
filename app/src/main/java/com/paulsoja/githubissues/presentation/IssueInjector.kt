@@ -5,9 +5,11 @@ import com.paulsoja.githubissues.presentation.di.BaseComponent
 import com.paulsoja.githubissues.presentation.ui.activity.AppActivity
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityComponent
 import com.paulsoja.githubissues.presentation.ui.activity.di.ActivityModule
-import com.paulsoja.githubissues.presentation.ui.flow.issue.IssueFlowComponent
-import com.paulsoja.githubissues.presentation.ui.flow.issue.card_issue.IssueCardComponent
+import com.paulsoja.githubissues.presentation.ui.flow.projects.IssueFlowComponent
+import com.paulsoja.githubissues.presentation.ui.flow.projects.card_issue.IssueCardComponent
+import com.paulsoja.githubissues.presentation.ui.flow.projects.projects.ProjectsComponent
 import com.paulsoja.githubissues.presentation.ui.flow.login.LoginFlowComponent
+import com.paulsoja.githubissues.presentation.ui.flow.projects.project_info.ProjectInfoComponent
 import com.paulsoja.githubissues.presentation.ui.flow.sample.SampleFlowComponent
 import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_first.SampleComponent
 import com.paulsoja.githubissues.presentation.ui.flow.sample.sample_second.SampleSecondComponent
@@ -44,6 +46,8 @@ object IssueInjector {
 
     private var issueFlowComponent: IssueFlowComponent? = null
     private var issueCardComponent: IssueCardComponent? = null
+    private var projectsComponent: ProjectsComponent? = null
+    private var projectInfoComponent: ProjectInfoComponent? = null
 
     fun plusIssueFlowComponent(): IssueFlowComponent? {
         return activityComponent?.addIssueFlowComponent().also {
@@ -66,6 +70,30 @@ object IssueInjector {
     fun clearIssueCardComponent(closedComponent: BaseComponent?) {
         if (closedComponent === issueCardComponent) {
             issueCardComponent = null
+        }
+    }
+
+    fun addProjectsComponent(): ProjectsComponent? {
+        return issueFlowComponent?.addProjectsComponent().also {
+            projectsComponent = it
+        }
+    }
+
+    fun clearProjectsComponent(closedComponent: BaseComponent?) {
+        if (closedComponent === projectsComponent) {
+            projectsComponent = null
+        }
+    }
+
+    fun addProjectInfoComponent(): ProjectInfoComponent? {
+        return issueFlowComponent?.addProjectInfoComponent().also {
+            projectInfoComponent = it
+        }
+    }
+
+    fun clearProjectInfoComponent(closedComponent: BaseComponent?) {
+        if (closedComponent === projectInfoComponent) {
+            projectInfoComponent = null
         }
     }
 

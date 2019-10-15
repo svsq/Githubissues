@@ -17,9 +17,10 @@ class HttpAuthInterceptor @Inject constructor(
 
         /*builder.header("Accept-Language", "uk")
         builder.header("x-version", "14")*/
-        preferencesRepository.getToken()?.let { token ->
+        builder.header("PRIVATE-TOKEN", "y_QxrS6cCyg7yXpfrMV7")
+        /*preferencesRepository.getToken()?.let { token ->
             builder.header("Authorization", "token $token")
-        }
+        }*/
         /*if (!isExceptions(chain.request().url().toString())) {
             preferencesRepository.getChain()?.let {
                 builder.header("x-chain", it)

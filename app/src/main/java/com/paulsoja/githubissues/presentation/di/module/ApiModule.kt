@@ -3,6 +3,7 @@ package com.paulsoja.githubissues.presentation.di.module
 import android.app.Application
 import com.google.gson.GsonBuilder
 import com.itkacher.okhttpprofiler.OkHttpProfilerInterceptor
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
@@ -17,6 +18,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -38,19 +41,22 @@ class ApiModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        loggingInterceptor: Interceptor, cache: Cache, authInterceptor: HttpAuthInterceptor
+        loggingInterceptor: Interceptor,
+        cache: Cache,
+        authInterceptor: HttpAuthInterceptor,
+        @Named("Chucker")
+        netLogsInterceptor: Interceptor
     ): OkHttpClient {
-
         val builder = OkHttpClient.Builder()
         builder.addInterceptor(loggingInterceptor)
         builder.addInterceptor(OkHttpProfilerInterceptor())
+        builder.addInterceptor(netLogsInterceptor)
         if (BuildConfig.DEBUG) {
             builder.addInterceptor(loggingInterceptor)
         }
         builder.cache(cache)
         builder.addInterceptor(authInterceptor)
         return builder.build()
-
     }
 
     @Provides
@@ -70,6 +76,13 @@ class ApiModule {
             .addCallAdapterFactory(RxErrorHandlingCallAdapterFactory.create())
             .baseUrl(BASE_URL)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    @Named("Chucker")
+    fun provideNetLogsChuckerInterceptor(application: Application): Interceptor {
+        return ChuckerInterceptor(application.applicationContext)
     }
 
     @Provides

@@ -30,7 +30,7 @@ android {
             def relativeRootDir = variant.getPackageApplicationProvider().get().outputs.files[1].toPath()
                     .relativize(rootDir.toPath()).toFile()
             def baseUrl = System.getenv("BASE_URL") != null ? System.getenv("BASE_URL") :
-                    '"https://api.github.com"'
+                    '"https://gitlab.com/api/v4/"'
 
             buildConfigField("String", "BASE_URL", baseUrl)
             def buildNameSuffix = variant.buildType.name != "release" ? "-${variant.buildType.name}" : ""
@@ -122,6 +122,10 @@ dependencies {
     implementation "ru.terrakok.cicerone:cicerone:5.0.0"
     implementation "com.hannesdorfmann:adapterdelegates3:3.1.0"
     implementation 'com.facebook.shimmer:shimmer:0.4.0'
+
+    // https://github.com/ChuckerTeam/chucker
+    implementation "com.github.ChuckerTeam.Chucker:library:3.0.1"
+    releaseImplementation "com.github.ChuckerTeam.Chucker:library-no-op:3.0.1"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

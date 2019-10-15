@@ -8,6 +8,10 @@ import javax.inject.Singleton
 @Singleton
 class IssueRouter : Router() {
 
+    fun startIssueScreen() {
+        newRootScreen(Screens.IssueScreenFlow)
+    }
+
     fun startSampleScreen() {
         newRootScreen(Screens.SampleFlowScreen(SampleScreenState.SAMPLE_1))
     }
