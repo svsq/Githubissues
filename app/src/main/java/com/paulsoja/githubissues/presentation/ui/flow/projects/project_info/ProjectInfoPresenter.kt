@@ -10,8 +10,14 @@ class ProjectInfoPresenter @Inject constructor(
     private val flowRouter: FlowRouter
 ) : BasePresenter<ProjectInfoView>() {
 
+    var projectId: Long? = null
+
     override fun onFirstViewAttach() {
         viewState.showLoading()
+    }
+
+    private fun loadProjectInfo() {
+
     }
 
 }

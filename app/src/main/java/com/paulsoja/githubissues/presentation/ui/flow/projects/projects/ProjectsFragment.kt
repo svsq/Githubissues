@@ -69,7 +69,7 @@ class ProjectsFragment : BaseFragment(R.layout.fragment_projects), ProjectsView,
     }
 
     override fun onProject(project: ProjectViewModel) {
-        presenter.openProjectInfo()
+        presenter.openProjectInfo(project.id)
     }
 
 }

@@ -16,6 +16,8 @@ class ProjectsPresenter @Inject constructor(
     private val projectViewModelMapper: ProjectViewModelMapper
 ) : BasePresenter<ProjectsView>() {
 
+    var projectId: Long? = null
+
     override fun onFirstViewAttach() {
         viewState.initViews()
         loadProjects()
@@ -33,8 +35,8 @@ class ProjectsPresenter @Inject constructor(
             })
     }
 
-    fun openProjectInfo() {
-        flowRouter.navigateTo(Screens.ProjectInfoScreen)
+    fun openProjectInfo(projectId: Long) {
+        flowRouter.navigateTo(Screens.ProjectInfoScreen(projectId))
     }
 
 }

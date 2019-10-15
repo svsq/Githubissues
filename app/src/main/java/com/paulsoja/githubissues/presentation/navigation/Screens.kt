@@ -27,8 +27,8 @@ object Screens {
         override fun getFragment() = ProjectsFragment.newInstance()
     }
 
-    object ProjectInfoScreen : SupportAppScreen() {
-        override fun getFragment() = ProjectInfoFragment.newInstance()
+    data class ProjectInfoScreen(val projectId: Long) : SupportAppScreen() {
+        override fun getFragment() = ProjectInfoFragment.newInstance(projectId)
     }
 
     object IssueCardScreen : SupportAppScreen() {
